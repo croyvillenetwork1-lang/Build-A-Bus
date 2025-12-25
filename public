@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MyBusBuilder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="../src/style.css" />
+</head>
+<body>
+  <header>
+    <h1>MyBusBuilder</h1>
+    <p>3D Bus Customiser · Wright · ADL · Enviro · London · WY · Bradford</p>
+  </header>
+
+  <main>
+    <section class="panel">
+      <h2>Bus model</h2>
+      <div class="field">
+        <span>Chassis / body</span>
+        <select id="busModel"></select>
+      </div>
+
+      <h2>Operator & route</h2>
+      <div class="field">
+        <span>Operator</span>
+        <select id="liveryPreset"></select>
+      </div>
+
+      <div class="field">
+        <span>Route preset</span>
+        <select id="routePreset"></select>
+      </div>
+
+      <h2>View</h2>
+      <div class="toggle-group">
+        <button class="toggle-btn active" data-view="exterior">Exterior</button>
+        <button class="toggle-btn" data-view="interior">Interior</button>
+      </div>
+
+      <h2>Exterior</h2>
+      <div class="field">
+        <span>Base colour</span>
+        <input type="color" id="exteriorColor" value="#1f6bff" />
+      </div>
+      <div class="field">
+        <span>Accent colour</span>
+        <input type="color" id="accentColor" value="#ffffff" />
+      </div>
+      <div class="field">
+        <span>Destination text</span>
+        <input type="text" id="destText" value="X11 Bradford" />
+      </div>
+
+      <h2>Interior</h2>
+      <div class="field">
+        <span>Seat colour</span>
+        <input type="color" id="seatColor" value="#21447f" />
+      </div>
+      <div class="field">
+        <span>Pole colour</span>
+        <input type="color" id="poleColor" value="#ffd000" />
+      </div>
+      <div class="field">
+        <span>Floor colour</span>
+        <input type="color" id="floorColor" value="#333842" />
+      </div>
+
+      <button id="downloadBtn" class="primary">Download PNG</button>
+    </section>
+
+    <section class="panel viewer-wrapper">
+      <h2>360 bus view</h2>
+      <div id="viewer">
+        <canvas id="threeCanvas"></canvas>
+      </div>
+      <p class="hint">Drag to rotate · pinch to zoom</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>MyBusBuilder · 3D Bus Customiser</p>
+  </footer>
+
+  <script src="https://unpkg.com/three@0.158.0/build/three.min.js"></script>
+  <script src="https://unpkg.com/three@0.158.0/examples/js/controls/OrbitControls.js"></script>
+  <script src="../src/script.js"></script>
+</body>
+</html>
